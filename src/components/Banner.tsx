@@ -6,10 +6,10 @@ import { useSession } from "next-auth/react";
 import styles from "./banner.module.css";
 
 const BANNER_IMAGES = [
-  "/img/cover.jpg",
-  "/img/cover2.jpg",
-  "/img/cover3.jpg",
-  "/img/cover4.jpg",
+  "https://images.unsplash.com/photo-1519167758481-83f550bb49b3?w=1600&q=80",
+  "https://images.unsplash.com/photo-1464366400600-7168b8af9bc3?w=1600&q=80",
+  "https://images.unsplash.com/photo-1505236858219-8359eb29e329?w=1600&q=80",
+  "https://images.unsplash.com/photo-1540575467063-178a50c2df87?w=1600&q=80",
 ];
 
 export default function Banner() {
