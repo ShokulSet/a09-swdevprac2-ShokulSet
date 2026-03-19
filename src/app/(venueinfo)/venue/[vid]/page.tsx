@@ -23,12 +23,16 @@ export default async function VenueDetailPage({
     );
   }
 
+  const pictureUrl = data.picture.includes("drive.google.com")
+    ? `/api/image-proxy?url=${encodeURIComponent(data.picture)}`
+    : data.picture;
+
   return (
     <main className="p-8">
       <div className="flex flex-wrap gap-8 items-start max-w-4xl mx-auto border border-gray-300 rounded-lg overflow-hidden bg-white">
         <div className="flex-1 min-w-[200px] rounded-l-lg overflow-hidden">
           <img
-            src={data.picture}
+            src={pictureUrl}
             alt={data.name}
             className="w-full h-64 object-cover"
           />

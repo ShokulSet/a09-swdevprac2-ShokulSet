@@ -10,6 +10,13 @@ interface CardProps {
 
 const ratingTestId = (venueName: string) => `${venueName} Rating`;
 
+function toEmbeddableUrl(src: string): string {
+  if (src.includes("drive.google.com")) {
+    return `/api/image-proxy?url=${encodeURIComponent(src)}`;
+  }
+  return src;
+}
+
 export default function Card({
   venueName = "Venue",
   imgSrc = "",
@@ -22,7 +29,7 @@ export default function Card({
     <InteractiveCard>
       <div className="w-72 overflow-hidden rounded-lg">
         <div className="w-full h-48 overflow-hidden">
-          <img src={imgSrc} alt={venueName} className="w-full h-full object-cover" />
+          <img src={toEmbeddableUrl(imgSrc)} alt={venueName} className="w-full h-full object-cover" />
         </div>
         <div className="p-5">
           <h2 className="text-lg font-bold text-gray-900">{venueName}</h2>
